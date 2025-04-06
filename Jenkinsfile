@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('check') {
             steps {
-                echo "checking your code"
+                echo "checking your code is done"
      
             }
         }
