@@ -1,14 +1,25 @@
 pipeline {
      agent any
+    parameters {
+        booleanParam(name:'project', defaultValue: true, description:'this paramater help you to know project name')
+        choice(name: 'namespace', choices:['dev','prod','stage'], description: '' ) 
+    }
+
     stages {
         stage('check') {
             steps {
-                echo "checking your code is done"
-     
+                echo "checking your code"
+                
+               
             }
         }
 
         stage('test') {
+            when {
+                expression{
+                    params.project == false
+                }
+            }
             steps {
                 echo "testing your app" 
             }
