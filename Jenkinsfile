@@ -2,7 +2,7 @@ pipeline {
      agent any
     parameters {
         booleanParam(name:'project', defaultValue: true, description:'this paramater help you to know project name')
-        choice(name: 'namespace', choices:['dev','prod','preprod'], description: '' ) 
+        choice(name: 'namespace', choices:['dev','prod','test'], description: '' ) 
     }
 
     stages {
